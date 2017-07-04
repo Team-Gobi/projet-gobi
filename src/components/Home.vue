@@ -1,39 +1,49 @@
 <template>
-  <div class="home">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    
-  </div>
+    <div class="home">
+        <input v-model="newMsg"><button @click="send()">send</button>
+        <person v-for="(p, i) in messages" :key="i" :person="p" @delete="remove(p)"></person>
+    </div>
 </template>
 
 <script>
+import Movie from './Movie';
+// import firebase from '../firebase';
+
 export default {
-    name: 'hello',
+    name: 'home',
     data () {
         return {
-            msg: 'Welcome to Your Vue.js App'
+            newMsg: '',
+            list: [
+                { n: 'a' },
+                { n: 'b' },
+                { n: 'c' }
+            ]
         };
+    },
+    /* firebase () {
+        return {
+            messages: {
+                source: firebase.database().ref('/demo/messages')
+            }
+        };
+    }, */
+    methods: {
+        /* send() {
+            this.$firebaseRefs.messages.push({txt: this.newMsg});
+            this.newMsg = '';
+        },
+        remove(p) {
+            this.$firebaseRefs.messages.child(p['.key']).remove();
+        } */
+    },
+    components: {
+        movie: Movie
     }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1, h2 {
-  font-weight: normal;
-}
+<style>
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
 </style>
