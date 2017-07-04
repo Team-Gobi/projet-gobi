@@ -16,7 +16,7 @@ module.exports = {
     'html'
   ],
   // add your custom rules here
-  'rules': {
+    'rules': {
     // enforce semi
     "semi": ["error", "always"],
     // use 4 spaces indent
