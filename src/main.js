@@ -8,8 +8,6 @@ import 'vue-material/dist/vue-material.css';
 
 Vue.config.productionTip = false;
 
-// var Vue = require('vue');
-// var VueMaterial = require('vue-material');
 Vue.use(VueMaterial);
 
 Vue.material.registerTheme({
