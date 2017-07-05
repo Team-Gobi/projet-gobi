@@ -18,12 +18,12 @@
       {{ uneAutreVar }}
     </h1>
       <md-list>
-        <md-list-item v-for="(person, index) in listFiltre" v-bind:key="index">
+        <md-list-item v-for="(movie, index) in movieList" v-bind:key="index">
           <md-avatar>
-            <img v-bind:src="person | toAvatars">
+            <img v-bind:src="movie.poster">
           </md-avatar>
-          <span>#{{ index + 1 }} {{ person.name }}</span>
-          <md-button v-on:click="remove(person)" class="md-raised md-accent">Supprimer</md-button>
+          <span>#{{ index + 1 }} {{ movie.title }}</span>
+          <md-button v-on:click="remove(movie)" class="md-raised md-accent">Supprimer</md-button>
         </md-list-item>
       </md-list>
   </md-layout>
@@ -38,25 +38,23 @@ const LOCALSTORAGE_KEY = 'vuedemo-malist';
 export default {
     name: 'home',
     data () {
-        let maList;
+        let movieList;
         try {
-            maList = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
-            if (!maList) {
+            movieList = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
+            if (!movieList) {
                 throw new Error();
             }
         } catch (e) {
-            maList = [
+            movieList = [
                 {
-                    name: 'Bibi',
-                    color: '#FF00FF'
+                    title: 'Drive',
+                    overview: 'A Hollywood stunt performer who moonlights as a wheelman for criminals discovers that a contract has been put on him after a heist gone wrong.',
+                    poster: 'http://image.tmdb.org/t/p/w185/nu7XIa67cXc2t7frXCE5voXUJcN.jpg'
                 },
                 {
-                    name: 'Moulin',
-                    color: '#00FF00'
-                },
-                {
-                    name: 'Babe',
-                    color: '#0000FF'
+                    title: 'Only God Forgives',
+                    overview: 'Julian, who runs a Thai boxing club as a front organization for his family s drug smuggling operation, is forced by his mother Jenna to find and kill the individual responsible for his brother s recent death.',
+                    poster: 'http://image.tmdb.org/t/p/w185/8KUPbn7gBm5o4cHM1K8SFfCpxOg.jpg'
                 }
             ];
         }
@@ -65,39 +63,38 @@ export default {
             query: '',
             uneAutreVar: 'Bibi',
             message: 'Hello vue.js',
-            maList
+            movieList
         };
     },
     filters: {
-        toAvatars (person) {
-            return `https://robohash.org/${person.name}`;
+        toFilmPoster (movie) {
+            return movie.poster;
         }
     },
     methods: {
         addToList () {
-            const person = {
-                name: this.uneAutreVar,
-                color: this.color
+            const movie = {
+                title: this.uneAutreVar
             };
-            this.maList.push(person);
+            this.movieList.push(movie);
         },
-        remove (person) {
-            let index = this.maList.indexOf(person);
-            this.maList.splice(index, 1);
+        remove (movie) {
+            let index = this.movieList.indexOf(movie);
+            this.movieList.splice(index, 1);
         }
     },
     computed: {
         listFiltre () {
-            return this.maList.filter(person => {
-                return person.name.toLowerCase().indexOf(this.query.toLowerCase()) === 0;
+            return this.movieList.filter(movie => {
+                return movie.title.toLowerCase().indexOf(this.query.toLowerCase()) > -1;
             });
         }
     },
     watch: {
-        maList: {
+        movieList: {
             handler: function (val, oldval) {
                 console.log('qqch a changé');
-                const listJson = JSON.stringify(this.maList);
+                const listJson = JSON.stringify(this.movieList);
                 localStorage.setItem(LOCALSTORAGE_KEY, listJson);
             },
             deep: true
