@@ -40,7 +40,7 @@
 <script>
 
 import Search from './Search';
-const LOCALSTORAGE_KEY = 'vuedemo-malist';
+const LOCALSTORAGE_KEY = 'movie-list-storage';
 
 export default {
     name: 'home',
