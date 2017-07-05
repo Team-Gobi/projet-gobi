@@ -1,17 +1,8 @@
 <template>
  
   <div class="home">
-  <md-list>
-    <md-list-item>
-      <md-input-container>
-        <label>Nom</label>
-        <md-input v-model="titreFilm"></md-input>
-        <md-button v-on:click="addToList" class="md-raised md-primary">Ajouter</md-button>
-      </md-input-container>
-    </md-list-item>
-  </md-list>
 
-<search></search>
+   <search></search>
 
    <md-list>
     <md-list-item>
@@ -25,7 +16,7 @@
     <md-list>
       <md-list-item v-for="(movie, index) in listFiltre" v-bind:key="index">
         <md-avatar>
-          <img v-bind:src="movie.poster">
+          <img v-bind:src="movie | toFilmPoster">
         </md-avatar>
         <span>#{{ index + 1 }} {{ movie.title }}</span>
         <md-button v-on:click="remove(movie)" class="md-raised md-accent">Supprimer</md-button>
@@ -40,7 +31,7 @@
 <script>
 
 import Search from './Search';
-const LOCALSTORAGE_KEY = 'vuedemo-malist';
+const LOCALSTORAGE_KEY = 'movie-list-storage';
 
 export default {
     name: 'home',
@@ -91,6 +82,11 @@ export default {
             return this.movieList.filter(movie => {
                 return movie.title.toLowerCase().indexOf(this.query.toLowerCase()) === 0;
             });
+        }
+    },
+    filters: {
+        toFilmPoster (movie) {
+            return 'http://image.tmdb.org/t/p/w185' + movie.poster_path;
         }
     },
     watch: {
