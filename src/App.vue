@@ -1,12 +1,12 @@
 <template>
-<md-layout md-flex-xsmall="100" md-flex-small="50" md-flex-medium="33" md-align="center" md-gutter>
-  <div id="app">
+<div id="app">
 
-      <img src="./assets/logo-gobi-sobre.png">
-
-    <router-view></router-view>
+      <!-- <img src="./assets/logo-gobi-sobre.png"> -->
+  <md-toolbar>
+    <h1 class="md-title">Gobi</h1>
+  </md-toolbar>
+    <router-view class="main-content"></router-view>
   </div>
-</md-layout>
 </template>
 
 <script>
@@ -17,12 +17,4 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>

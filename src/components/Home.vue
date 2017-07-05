@@ -1,27 +1,38 @@
 <template>
+ 
   <div class="home">
 
-    <md-input-container>
-        <label>Nom</label>
-        <md-input v-model="titreFilm"></md-input>
-        <md-button v-on:click="addToList" class="md-raised md-primary">Ajouter</md-button>
+  <md-list>
+    <md-list-item>
+      <md-input-container>
+      <label>Nom</label>
+      <md-input v-model="titreFilm"></md-input>
+      <md-button v-on:click="addToList" class="md-raised md-primary">Ajouter</md-button>
     </md-input-container>
-    <md-input-container>    
-        <label>Filtre</label>
-        <md-input v-model="query"></md-input>
-    </md-input-container>
+    </md-list-item>
+  </md-list>
 
-      <md-list>
-        <md-list-item v-for="(movie, index) in listFiltre" v-bind:key="index">
-          <md-avatar>
-            <img v-bind:src="movie.poster">
-          </md-avatar>
-          <span>#{{ index + 1 }} {{ movie.title }}</span>
-          <md-button v-on:click="remove(movie)" class="md-raised md-accent">Supprimer</md-button>
-        </md-list-item>
-      </md-list>
-  </md-layout>
+   <md-list>
+    <md-list-item>
+    <md-input-container>
+      <label>Filtre</label>
+      <md-input v-model="query"></md-input>
+    </md-input-container>
+    </md-list-item>
+  </md-list>
+  
+    <md-list>
+      <md-list-item v-for="(movie, index) in listFiltre" v-bind:key="index">
+        <md-avatar>
+          <img v-bind:src="movie.poster">
+        </md-avatar>
+        <span>#{{ index + 1 }} {{ movie.title }}</span>
+        <md-button v-on:click="remove(movie)" class="md-raised md-accent">Supprimer</md-button>
+      </md-list-item>
+    </md-list>
+
   </div>
+
 
 </template>
 
@@ -58,11 +69,6 @@ export default {
             movieList
         };
     },
-    filters: {
-        toFilmPoster (movie) {
-            return movie.poster;
-        }
-    },
     methods: {
         addToList () {
             const movie = {
@@ -97,22 +103,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1,
-h2 {
-  font-weight: normal;
-}
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
 </style>
