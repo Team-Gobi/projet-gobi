@@ -3,6 +3,7 @@
         <h1>{{ $route.params.query }}</h1>
         <p v-for="title in results" v-bind:src="title" v-bind:key="title">
             {{ title }}
+
         </p>
     </div>
 </template>
@@ -12,7 +13,7 @@ import axios from 'axios';
 
 export default {
     data () {
-        axios.get(`https://amc.ig.he-arc.ch/tmdb/movie/popular`)
+        axios.get(`https://amc.ig.he-arc.ch/tmdb/search/movie?query=${this.$route.params.query}`)
         .then((response) => {
             console.log(response);
             this.results = response.data.results.map(result => result.title);
@@ -22,7 +23,8 @@ export default {
         });
 
         return {
-            results: []
+            results: [],
+            images: []
         };
     }
 };
