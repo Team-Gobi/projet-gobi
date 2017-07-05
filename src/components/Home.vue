@@ -12,6 +12,8 @@
     </md-list-item>
   </md-list>
 
+<search></search>
+
    <md-list>
     <md-list-item>
       <md-input-container>
@@ -38,7 +40,7 @@
 
 <script>
 
-// import Search from './Search';
+import Search from './Search';
 const LOCALSTORAGE_KEY = 'vuedemo-malist';
 
 export default {
@@ -69,6 +71,9 @@ export default {
             titreFilm: '',
             movieList
         };
+    },
+    components: {
+        search: Search
     },
     methods: {
         addToList () {
