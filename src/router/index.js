@@ -25,7 +25,7 @@ export default new Router({
             component: Movie
         },
         {
-            path: '/search/:query',
+            path: '/search',
             name: 'Search',
             component: Search
         }

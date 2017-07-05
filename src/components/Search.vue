@@ -1,8 +1,9 @@
 <template>
     <div>
-        <h1>{{ $route.params.query }}</h1>
-        <input v-model="searchRequest">
-        <button @click="displaySearch()">search</button>
+        <md-input-container>
+            <label>Titre de film</label>
+            <md-input v-model="searchRequest"></md-input>
+        </md-input-container>
         <p v-for="result in results" v-bind:src="result" v-bind:key="result">
             {{ result.title}}
             {{ result.release_date }}
@@ -16,24 +17,28 @@ import axios from 'axios';
 export default {
     name: 'search',
     data () {
-        axios.get(`https://amc.ig.he-arc.ch/tmdb/search/movie?query=${this.$route.params.query}`)
-        .then((response) => {
-            console.log(response);
-            this.results = response.data.results.map(result => result);
-        })
-        .catch(error => {
-            console.log(error);
-        });
-
         return {
-            searchRequest: 'ok ',
+            searchRequest: '',
             results: []
         };
     },
     methods: {
         displaySearch () {
+            axios.get(`https://amc.ig.he-arc.ch/tmdb/search/movie?query=${this.searchRequest}`)
+            .then((response) => {
+                console.log(response);
+                this.results = response.data.results.map(result => result);
+            })
+            .catch(error => {
+                console.log(error);
+            });
         },
         addMovie (p) {
+        }
+    },
+    watch: {
+        searchRequest: function () {
+            this.displaySearch();
         }
     }
 };
