@@ -10,7 +10,7 @@
     </md-button>
   </md-toolbar>
 
-  <router-view class="main-content"></router-view>
+  <router-view></router-view>
 
   </div>
 </template>

@@ -12,21 +12,31 @@
       </md-input-container>
     </md-list-item>
   </md-list>
-  
-    <md-list>
+
+  <md-list>
+    <md-list-item>
+      <h1 class="md-title"><strong>Mes Films</strong></h1>
+    </md-list-item>
+  </md-list>
+
+  <md-list>
       <md-list-item v-for="(movie, index) in listFiltre" v-bind:key="index">
+        <md-divider class="md-inset"></md-divider>
         <md-avatar>
           <img v-bind:src="movie | toFilmPoster">
         </md-avatar>
         <span><b>{{ movie.title }}</b></span>
-        <md-button v-on:click="remove(movie)" class="md-raised md-accent">Supprimer</md-button>
-       <md-button class="md-raised md-primary">
-     <router-link router-link v-bind:to="{path: '/movie', query: {index: movieList.indexOf(movie)}}">Détails</router-link>
+        <md-button v-on:click="remove(movie)" class="md-raised md-accent md-icon-button">
+        <strong>—</strong><md-icon></md-icon>
+        </md-button>
+        <md-button class="md-icon-button md-dense">
+          <md-icon>
+            <router-link router-link v-bind:to="{path: '/movie', query: {index: movieList.indexOf(movie)}}">more_vert</router-link>
+          </md-icon>  
         </md-button>
       </md-list-item>
-    </md-list>
+  </md-list>
   </div>
-
 
 </template>
 
@@ -45,18 +55,7 @@ export default {
                 throw new Error();
             }
         } catch (e) {
-            movieList = [
-                {
-                    title: 'Drive',
-                    overview: 'A Hollywood stunt performer who moonlights as a wheelman for criminals discovers that a contract has been put on him after a heist gone wrong.',
-                    poster: 'http://image.tmdb.org/t/p/w185/nu7XIa67cXc2t7frXCE5voXUJcN.jpg'
-                },
-                {
-                    title: 'Only God Forgives',
-                    overview: 'Julian, who runs a Thai boxing club as a front organization for his family s drug smuggling operation, is forced by his mother Jenna to find and kill the individual responsible for his brother s recent death.',
-                    poster: 'http://image.tmdb.org/t/p/w185/8KUPbn7gBm5o4cHM1K8SFfCpxOg.jpg'
-                }
-            ];
+            print('Pas de films dans votre liste');
         }
         return {
             query: '',
