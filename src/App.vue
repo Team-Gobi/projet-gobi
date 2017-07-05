@@ -2,10 +2,16 @@
 <div id="app">
 
       <!-- <img src="./assets/logo-gobi-sobre.png"> -->
+
   <md-toolbar>
-    <h1 class="md-title">GOBI</h1>
+    <h2 class="md-title" style="flex: 1">GOBI</h2>
+    <md-button class="md-icon-button">
+      <a href="/home"><md-icon class="md-size-1x md-accent">home</md-icon></a>
+    </md-button>
   </md-toolbar>
-    <router-view class="main-content"></router-view>
+
+  <router-view class="main-content"></router-view>
+
   </div>
 </template>
 

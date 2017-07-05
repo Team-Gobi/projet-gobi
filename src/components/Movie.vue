@@ -3,7 +3,10 @@
   <md-card-header>
     <md-card-header-text>
       <div class="md-title"> {{ movieList[$route.query.index].title }} </div>
-      <div class="md-subhead">Date de sortie: {{ movieList[$route.query.index].release_date}} </div>
+      <div class="md-subhead">Date de sortie: {{ movieList[$route.query.index].release_date}}</div>
+      <div class="md-subhead">Popularité:
+        <md-progress class="md-accent" :md-progress="movieList[$route.query.index].vote_average * 10"></md-progress>
+      </div>
     </md-card-header-text>
   </md-card-header>
 
@@ -14,7 +17,7 @@
   </md-layout>
 
   <md-card-content>
-    {{ movieList[$route.query.index].overview}}
+   {{ movieList[$route.query.index].overview }}
   </md-card-content>
 </md-card>
 </template>

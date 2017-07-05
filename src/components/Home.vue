@@ -98,6 +98,7 @@ export default {
                 localStorage.setItem(LOCALSTORAGE_KEY, listJson);
             },
             deep: true
+
         }
     }
 };
