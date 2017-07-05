@@ -17,7 +17,6 @@
     <h1 v-show="on">
       {{ uneAutreVar }}
     </h1>
-    <div class="phone-viewport">
       <md-list>
         <md-list-item v-for="(person, index) in listFiltre" v-bind:key="index">
           <md-avatar>
@@ -27,7 +26,6 @@
           <md-button v-on:click="remove(person)" class="md-raised md-accent">Supprimer</md-button>
         </md-list-item>
       </md-list>
-    </div>
   </div>
 </template>
 
