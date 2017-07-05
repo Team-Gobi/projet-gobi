@@ -11,7 +11,7 @@ export default {
     props: ['movie'],
     filters: {
         toFilmPoster (movie) {
-            return movie.poster_path;
+            return `http://image.tmdb.org/t/p/w185`;
         }
     }
 };
