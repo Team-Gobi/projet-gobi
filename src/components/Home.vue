@@ -18,11 +18,13 @@
         <md-avatar>
           <img v-bind:src="movie | toFilmPoster">
         </md-avatar>
-        <span>#{{ index + 1 }} {{ movie.title }}</span>
+        <span><b>{{ movie.title }}</b></span>
         <md-button v-on:click="remove(movie)" class="md-raised md-accent">Supprimer</md-button>
+       <md-button class="md-raised md-primary">
+     <router-link router-link v-bind:to="{path: '/movie', query: {index: movieList.indexOf(movie)}}">Détails</router-link>
+        </md-button>
       </md-list-item>
     </md-list>
-
   </div>
 
 

@@ -2,19 +2,19 @@
 <md-card>
   <md-card-header>
     <md-card-header-text>
-      <div class="md-title"> {{ movieList[0].title }} </div>
-      <div class="md-subhead">Date de sortie: {{ movieList[0].release_date}} </div>
+      <div class="md-title"> {{ movieList[$route.query.index].title }} </div>
+      <div class="md-subhead">Date de sortie: {{ movieList[$route.query.index].release_date}} </div>
     </md-card-header-text>
   </md-card-header>
 
   <md-layout md-gutter>
   <md-card-media>
-    <img v-bind:src="movieList[0] | toFilmPoster" alt="Image Film">
+    <img v-bind:src="movieList[$route.query.index] | toFilmPoster" alt="Image Film">
   </md-card-media>
   </md-layout>
 
   <md-card-content>
-    {{ movieList[0].overview}}
+    {{ movieList[$route.query.index].overview}}
   </md-card-content>
 </md-card>
 </template>
