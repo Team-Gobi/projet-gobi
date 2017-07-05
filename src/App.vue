@@ -3,7 +3,7 @@
 
       <!-- <img src="./assets/logo-gobi-sobre.png"> -->
   <md-toolbar>
-    <h1 class="md-title">Gobi</h1>
+    <h1 class="md-title">GOBI</h1>
   </md-toolbar>
     <router-view class="main-content"></router-view>
   </div>

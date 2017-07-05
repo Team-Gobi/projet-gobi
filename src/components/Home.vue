@@ -5,19 +5,19 @@
   <md-list>
     <md-list-item>
       <md-input-container>
-      <label>Nom</label>
-      <md-input v-model="titreFilm"></md-input>
-      <md-button v-on:click="addToList" class="md-raised md-primary">Ajouter</md-button>
-    </md-input-container>
+        <label>Nom</label>
+        <md-input v-model="titreFilm"></md-input>
+        <md-button v-on:click="addToList" class="md-raised md-primary">Ajouter</md-button>
+      </md-input-container>
     </md-list-item>
   </md-list>
 
    <md-list>
     <md-list-item>
-    <md-input-container>
-      <label>Filtre</label>
-      <md-input v-model="query"></md-input>
-    </md-input-container>
+      <md-input-container>
+        <label>Filtre</label>
+        <md-input v-model="query"></md-input>
+      </md-input-container>
     </md-list-item>
   </md-list>
   
@@ -72,7 +72,7 @@ export default {
     methods: {
         addToList () {
             const movie = {
-                title: this.uneAutreVar
+                title: this.titreFilm
             };
             this.movieList.push(movie);
         },
