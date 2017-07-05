@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+
     <md-input-container>
         <label>Nom</label>
         <md-input v-model="uneAutreVar"></md-input>
