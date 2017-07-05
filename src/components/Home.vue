@@ -3,22 +3,16 @@
 
     <md-input-container>
         <label>Nom</label>
-        <md-input v-model="uneAutreVar"></md-input>
+        <md-input v-model="titreFilm"></md-input>
         <md-button v-on:click="addToList" class="md-raised md-primary">Ajouter</md-button>
     </md-input-container>
     <md-input-container>    
         <label>Filtre</label>
         <md-input v-model="query"></md-input>
     </md-input-container>
-    <h1 class="md-title" style="flex: 1" v-if="on">
-      {{ message }}
-    </h1>
-  
-    <h1 v-show="on">
-      {{ uneAutreVar }}
-    </h1>
+
       <md-list>
-        <md-list-item v-for="(movie, index) in movieList" v-bind:key="index">
+        <md-list-item v-for="(movie, index) in listFiltre" v-bind:key="index">
           <md-avatar>
             <img v-bind:src="movie.poster">
           </md-avatar>
@@ -59,10 +53,8 @@ export default {
             ];
         }
         return {
-            on: true,
             query: '',
-            uneAutreVar: 'Bibi',
-            message: 'Hello vue.js',
+            titreFilm: '',
             movieList
         };
     },
@@ -86,14 +78,13 @@ export default {
     computed: {
         listFiltre () {
             return this.movieList.filter(movie => {
-                return movie.title.toLowerCase().indexOf(this.query.toLowerCase()) > -1;
+                return movie.title.toLowerCase().indexOf(this.query.toLowerCase()) === 0;
             });
         }
     },
     watch: {
         movieList: {
             handler: function (val, oldval) {
-                console.log('qqch a changé');
                 const listJson = JSON.stringify(this.movieList);
                 localStorage.setItem(LOCALSTORAGE_KEY, listJson);
             },
