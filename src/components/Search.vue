@@ -16,7 +16,7 @@
                         <p> {{ result.overview}}</p>
                     </div>
 
-                    <md-button v-on:click="addMovie(result)" class="md-icon-button md-raised">
+                    <md-button v-on:click="addMovie(result, result.id)" class="md-icon-button md-raised">
                         <md-icon>add</md-icon>
                     </md-button>
 
@@ -55,10 +55,19 @@ export default {
                 this.results = [];
             }
         },
-        addMovie (p) {
-            console.log(p);
+        addMovie (movie, id) {
+            let movieList;
+            try {
+                movieList = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
+                if (!movieList) {
+                    throw new Error();
+                }
+            } catch (e) {
+                movieList = [];
+            }
+            movieList.push(movie);
             this.searchRequest = '';
-            const listJson = JSON.stringify(this.results);
+            const listJson = JSON.stringify(movieList);
             localStorage.setItem(LOCALSTORAGE_KEY, listJson);
             this.results = [];
         }
