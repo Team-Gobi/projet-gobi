@@ -8,7 +8,7 @@
             <md-list class="custom-list md-triple-line" v-for="result in results" v-bind:src="result" v-bind:key="result">
                 <md-list-item>
                     <md-avatar>
-                        <img v-bind:src=`http://image.tmdb.org/t/p/w185${result.poster_path}` alt="People">
+                        <img v-bind:src="result | toFilmPoster" alt="People">
                     </md-avatar>
                     <div class="md-list-text-container">
                         <span>{{ result.title}}</span>
@@ -16,7 +16,7 @@
                         <p></p>
                     </div>
 
-                    <md-button class="md-icon-button md-raised">
+                    <md-button v-on:click="addMovie(result)" class="md-icon-button md-raised">
                         <md-icon>add</md-icon>
                     </md-button>
 
@@ -41,16 +41,26 @@ export default {
     },
     methods: {
         displaySearch () {
-            axios.get(`https://amc.ig.he-arc.ch/tmdb/search/movie?query=${this.searchRequest}`)
-            .then((response) => {
-                console.log(response);
-                this.results = response.data.results.map(result => result);
-            })
-            .catch(error => {
-                console.log(error);
-            });
+            if (this.searchRequest !== '') {
+                axios.get(`https://amc.ig.he-arc.ch/tmdb/search/movie?query=${this.searchRequest}`)
+                .then((response) => {
+                    console.log(response);
+                    this.results = response.data.results.map(result => result);
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+            }
         },
         addMovie (p) {
+            console.log(p);
+            this.searchRequest = '';
+            this.results = [];
+        }
+    },
+    filters: {
+        toFilmPoster (movie) {
+            return 'http://image.tmdb.org/t/p/w185' + movie.poster_path;
         }
     },
     watch: {
