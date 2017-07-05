@@ -8,12 +8,7 @@
 
 <script>
 export default {
-    props: ['movie'],
-    filters: {
-        toFilmPoster (movie) {
-            return `http://image.tmdb.org/t/p/w185`;
-        }
-    }
+    props: ['movie']
 };
 
 </script>

@@ -37,6 +37,7 @@
 
 <script>
 
+// import Search from './Search';
 const LOCALSTORAGE_KEY = 'vuedemo-malist';
 
 export default {
@@ -101,6 +102,6 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
 
 </style>
