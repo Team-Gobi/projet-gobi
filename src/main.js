@@ -3,11 +3,13 @@
 import Vue from 'vue';
 import App from './App';
 import router from './router';
+import VueMaterial from 'vue-material';
 import 'vue-material/dist/vue-material.css';
 
 Vue.config.productionTip = false;
 
-var VueMaterial = require('vue-material');
+// var Vue = require('vue');
+// var VueMaterial = require('vue-material');
 Vue.use(VueMaterial);
 
 Vue.material.registerTheme({

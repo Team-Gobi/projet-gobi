@@ -1,10 +1,8 @@
 <template>
-<md-layout md-flex-xsmall="100" md-flex-small="50" md-flex-medium="33" md-align="center" md-gutter>
+<md-layout md-flex-medium="100" md-align="center" md-gutter>
   <div id="app">
   <md-toolbar class="md-large" md-theme="white">
       <img src="./assets/logo-gobi-sobre.png">
-
-
   </md-toolbar>
     <router-view></router-view>
   </div>
