@@ -29,6 +29,7 @@
 </template>
 
 <script>
+const LOCALSTORAGE_KEY = 'movie-list-storage';
 import axios from 'axios';
 
 export default {
@@ -57,6 +58,8 @@ export default {
         addMovie (p) {
             console.log(p);
             this.searchRequest = '';
+            const listJson = JSON.stringify(this.results);
+            localStorage.setItem(LOCALSTORAGE_KEY, listJson);
             this.results = [];
         }
     },
