@@ -1,7 +1,6 @@
 <template>
  
   <div class="home">
-
   <md-list>
     <md-list-item>
       <md-input-container>

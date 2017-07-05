@@ -13,7 +13,7 @@
                     <div class="md-list-text-container">
                         <span>{{ result.title}}</span>
                         <span>{{ result.release_date }}</span>
-                        <p></p>
+                        <p> {{ result.overview}}</p>
                     </div>
 
                     <md-button v-on:click="addMovie(result)" class="md-icon-button md-raised">
@@ -50,6 +50,8 @@ export default {
                 .catch(error => {
                     console.log(error);
                 });
+            } else {
+                this.results = [];
             }
         },
         addMovie (p) {
