@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    
     <md-input-container>
         <label>Nom</label>
         <md-input v-model="uneAutreVar"></md-input>
@@ -26,7 +25,9 @@
           <md-button v-on:click="remove(person)" class="md-raised md-accent">Supprimer</md-button>
         </md-list-item>
       </md-list>
+  </md-layout>
   </div>
+
 </template>
 
 <script>

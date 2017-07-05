@@ -1,8 +1,11 @@
 <template>
+<md-layout md-flex-xsmall="100" md-flex-small="50" md-flex-medium="33" md-align="center" md-gutter>
   <div id="app">
     <img src="./assets/image-gobi.png">
+    
     <router-view></router-view>
   </div>
+</md-layout>
 </template>
 
 <script>
