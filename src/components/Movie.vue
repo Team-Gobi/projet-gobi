@@ -35,18 +35,7 @@ export default {
                 throw new Error();
             }
         } catch (e) {
-            movieList = [
-                {
-                    title: 'Drive',
-                    overview: 'A Hollywood stunt performer who moonlights as a wheelman for criminals discovers that a contract has been put on him after a heist gone wrong.',
-                    poster: 'http://image.tmdb.org/t/p/w185/nu7XIa67cXc2t7frXCE5voXUJcN.jpg'
-                },
-                {
-                    title: 'Only God Forgives',
-                    overview: 'Julian, who runs a Thai boxing club as a front organization for his family s drug smuggling operation, is forced by his mother Jenna to find and kill the individual responsible for his brother s recent death.',
-                    poster: 'http://image.tmdb.org/t/p/w185/8KUPbn7gBm5o4cHM1K8SFfCpxOg.jpg'
-                }
-            ];
+            movieList = [];
         }
         return {
             query: '',
