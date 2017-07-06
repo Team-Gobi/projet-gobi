@@ -62,6 +62,7 @@ export default {
         addMovie (movie) {
             this.$emit('addMovie', movie);
             this.results = [];
+            this.searchRequest = '';
         }
     },
     filters: {
