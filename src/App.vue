@@ -6,7 +6,7 @@
   <md-toolbar>
     <h2 class="md-title" style="flex: 1">GOBI</h2>
     <md-button class="md-icon-button">
-      <a href="/home"><md-icon class="md-size-1x md-accent">home</md-icon></a>
+      <a href="./"><md-icon class="md-size-1x md-accent">home</md-icon></a>
     </md-button>
   </md-toolbar>
 

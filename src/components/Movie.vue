@@ -10,7 +10,7 @@
     </md-card-header-text>
   </md-card-header>
 
-  <md-layout md-gutter>
+  <md-layout md-align="center" md-gutter>
   <md-card-media>
     <img v-bind:src="movieList[$route.query.index] | toFilmPoster" alt="Image Film">
   </md-card-media>
