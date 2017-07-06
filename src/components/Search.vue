@@ -74,7 +74,7 @@ export default {
             const listJson = JSON.stringify(movieList);
             localStorage.setItem(LOCALSTORAGE_KEY, listJson);
             this.results = [];
-            window.location.reload(true);
+            this.$emit('refresh');
         }
     },
     filters: {

@@ -1,16 +1,6 @@
 <template>
     <div class="home">
-        <search></search>   
-        <md-list>
-            <md-list-item>
-            <h1 class="md-title">
-                <strong>
-                    <md-icon>movie</md-icon>
-                    Mes Films
-                </strong>
-            </h1>
-            </md-list-item>
-        </md-list>
+        <search v-on:refresh="refresh"></search>   
         <md-list>
             <md-list-item>
                 <md-input-container>
@@ -75,6 +65,9 @@ export default {
         remove (movie) {
             let index = this.movieList.indexOf(movie);
             this.movieList.splice(index, 1);
+        },
+        refresh () {
+            // this.$forceUpdate();
         }
     },
     computed: {
