@@ -31,7 +31,7 @@
         </md-button>
         <md-button class="md-icon-button md-dense">
           <md-icon>
-            <router-link router-link v-bind:to="{path: '/movie', query: {index: movieList.indexOf(movie)}}">more_vert</router-link>
+            <router-link v-bind:to="{path: '/movie', query: {index: movieList.indexOf(movie)}}">more_vert</router-link>
           </md-icon>  
         </md-button>
       </md-list-item>
