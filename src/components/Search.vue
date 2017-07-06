@@ -46,7 +46,7 @@ export default {
     methods: {
         displaySearch () {
             if (this.searchRequest !== '') {
-                axios.get(`https://amc.ig.he-arc.ch/tmdb/search/movie?query=${this.searchRequest}`)
+                axios.get(`https://api.themoviedb.org/3/search/movie?api_key=44d6208f7585fb3802a31ecaec254aef&language=fr&query=${this.searchRequest}`)
                 .then((response) => {
                     console.log(response);
                     this.results = response.data.results.map(result => result);
@@ -67,7 +67,7 @@ export default {
     },
     filters: {
         toFilmPoster (movie) {
-            return 'http://image.tmdb.org/t/p/w185' + movie.poster_path;
+            return `http://image.tmdb.org/t/p/w185${movie.poster_path}`;
         }
     },
     watch: {
