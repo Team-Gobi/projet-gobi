@@ -1,10 +1,10 @@
 {
-  "name": "movielist",
-  "short_name": "movielist",
+  "name": "gobimovielist",
+  "short_name": "gobimovielist",
   "lang": "fr-CH",
   "start_url": "/",
   "display": "standalone",
-  "theme_color": "#388E3C",
+  "theme_color": "#607d8b",
   "icons": [
     {
       "src": "/static/logo-gobi-sobre.png",
