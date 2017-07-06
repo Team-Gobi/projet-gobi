@@ -67,7 +67,7 @@ export default {
     },
     filters: {
         toFilmPoster (movie) {
-            return `http://image.tmdb.org/t/p/w185${movie.poster_path}`;
+            return `https://image.tmdb.org/t/p/w185${movie.poster_path}`;
         }
     },
     watch: {
