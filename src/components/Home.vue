@@ -73,7 +73,11 @@ export default {
     },
     filters: {
         toFilmPoster (movie) {
-            return 'http://image.tmdb.org/t/p/w185' + movie.poster_path;
+            if (movie.poster_path !== null) {
+                return `https://image.tmdb.org/t/p/w185${movie.poster_path}`;
+            } else {
+                return 'static/logo-gobi.png';
+            }
         }
     },
     watch: {
