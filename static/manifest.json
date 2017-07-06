@@ -7,7 +7,7 @@
   "theme_color": "#607d8b",
   "icons": [
     {
-      "src": "/static/logo-gobi-sobre.png",
+      "src": "/static/logo-gobi.png",
       "sizes": "192x192",
       "type": "image/png"
     }
