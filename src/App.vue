@@ -9,9 +9,9 @@
       <a href="./"><md-icon class="md-size-1x md-accent">home</md-icon></a>
     </md-button>
   </md-toolbar>
-
-  <router-view></router-view>
-
+  <div class="md-toolbar-container">
+    <router-view></router-view>
+  </div>
   </div>
 </template>
 

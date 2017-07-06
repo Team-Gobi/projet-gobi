@@ -20,10 +20,9 @@
                         <span> {{ result.overview }}</span>
                     </div>
 
-                    <md-button v-on:click="addMovie(result, result.id)" class="md-icon-button md-raised">
+                    <md-button v-on:click="addMovie(result, result.id)" class="md-icon-button material-icons">
                         <md-icon>add</md-icon>
                     </md-button>
-
                     <md-divider class="md-inset"></md-divider>
                 </md-list-item>
             </md-list>
