@@ -30,6 +30,9 @@ export default {
 </script>
 
 <style>
+.body {
+  font-family: "Roboto Mono",serif;
+}
 .complete-example {
   height: 100vh;
   display: flex;
