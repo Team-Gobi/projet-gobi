@@ -9,6 +9,12 @@ import 'vue-material/dist/vue-material.css';
 Vue.config.productionTip = false;
 
 Vue.use(VueMaterial);
+Vue.material.registerTheme('default', {
+    primary: 'blue-grey',
+    accent: 'grey',
+    warn: 'red',
+    background: 'white'
+});
 
 /* eslint-disable no-new */
 new Vue({
