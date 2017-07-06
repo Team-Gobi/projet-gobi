@@ -4,7 +4,7 @@
     <md-card-header-text>
       <div class="md-title"> {{ movieList[$route.query.index].title }} </div>
       <div class="md-subhead">Date de sortie: {{ movieList[$route.query.index].release_date}}</div>
-      <div class="md-subhead">Popularité:
+      <div>Popularité:
         <md-progress class="md-accent" :md-progress="movieList[$route.query.index].vote_average * 10"></md-progress>
       </div>
     </md-card-header-text>
@@ -12,7 +12,7 @@
 
   <md-layout md-align="center" md-gutter>
   <md-card-media>
-    <img v-bind:src="movieList[$route.query.index] | toFilmPoster" alt="Image Film">
+  <router-link v-bind:to="{path: './'}"><img v-bind:src="movieList[$route.query.index] | toFilmPoster" alt="Image Film"></router-link>
   </md-card-media>
   </md-layout>
 
