@@ -3,12 +3,18 @@
         <search></search>   
         <md-list>
             <md-list-item>
-            <h1 class="md-title"><strong>Mes Films</strong></h1>
+            <h1 class="md-title">
+                <strong>
+                    <md-icon>movie</md-icon>
+                    Mes Films
+                </strong>
+            </h1>
             </md-list-item>
         </md-list>
         <md-list>
             <md-list-item>
                 <md-input-container>
+                    <md-icon>movie_filter</md-icon>
                     <label>Filtre</label>
                     <md-input v-model="query"></md-input>
                 </md-input-container>

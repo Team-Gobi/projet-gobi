@@ -3,7 +3,7 @@
       <md-list>
         <md-list-item>
           <md-input-container>
-              <label>Rechercher un film</label>
+              <label>Rechercher un film à ajouter</label>
               <md-input v-model="searchRequest"></md-input>
           </md-input-container>
         </md-list-item>
