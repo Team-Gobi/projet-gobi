@@ -43,12 +43,6 @@ export default {
             movieList
         };
     },
-    methods: {
-        remove (movie) {
-            let index = this.movieList.indexOf(movie);
-            this.movieList.splice(index, 1);
-        }
-    },
     filters: {
         toFilmPoster (movie) {
             if (movie.poster_path !== null) {
