@@ -57,7 +57,7 @@ export default {
     },
     methods: {
         addToList (movie) {
-            this.movieList.push(movie);
+            this.movieList.unshift(movie);
         },
         remove (movie) {
             let index = this.movieList.indexOf(movie);
