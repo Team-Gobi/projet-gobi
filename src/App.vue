@@ -5,13 +5,14 @@
     <!-- <img src="./assets/logo-gobi-sobre.png"> -->
     <div class="phone-viewport complete-example">
       <md-toolbar class="md-toolbar-container">
-        <md-icon>theaters</md-icon>
-        <h2 class="md-title" style="flex: 1">GOBI</h2>
         <md-button class="md-icon-button">
           <a href="./">
             <md-icon class="md-size-1x md-accent">home</md-icon>
           </a>
         </md-button>
+        <md-icon>theaters</md-icon>
+        <h2 class="md-title" style="flex: 1">GOBI</h2>
+        
       </md-toolbar>
       <div class="home-slide">
         <router-view></router-view>
