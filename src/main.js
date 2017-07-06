@@ -11,7 +11,7 @@ Vue.config.productionTip = false;
 Vue.use(VueMaterial);
 Vue.material.registerTheme('default', {
     primary: 'blue-grey',
-    accent: 'grey',
+    accent: 'black',
     warn: 'red',
     background: 'white'
 });
