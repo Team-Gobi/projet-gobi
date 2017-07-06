@@ -1,6 +1,6 @@
 <template>
     <div class="home">
-        <search v-on:refresh="refresh"></search>   
+        <search v-on:addMovie="addToList"></search>   
         <md-list>
             <md-list-item>
                 <md-input-container>
@@ -56,18 +56,12 @@ export default {
         search: Search
     },
     methods: {
-        addToList () {
-            const movie = {
-                title: this.titreFilm
-            };
+        addToList (movie) {
             this.movieList.push(movie);
         },
         remove (movie) {
             let index = this.movieList.indexOf(movie);
             this.movieList.splice(index, 1);
-        },
-        refresh () {
-            // this.$forceUpdate();
         }
     },
     computed: {

@@ -21,7 +21,7 @@
                         <span> {{ result.overview }}</span>
                     </div>
 
-                    <md-button v-on:click="addMovie(result, result.id)" class="md-icon-button material-icons">
+                    <md-button v-on:click="addMovie(result)" class="md-icon-button material-icons">
                         <md-icon>add</md-icon>
                     </md-button>
                     <md-divider class="md-inset"></md-divider>
@@ -33,7 +33,6 @@
 </template>
 
 <script>
-const LOCALSTORAGE_KEY = 'movie-list-storage';
 import axios from 'axios';
 
 export default {
@@ -56,25 +55,13 @@ export default {
                     console.log(error);
                 });
             } else {
+                this.searchRequest = '';
                 this.results = [];
             }
         },
-        addMovie (movie, id) {
-            let movieList;
-            try {
-                movieList = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
-                if (!movieList) {
-                    throw new Error();
-                }
-            } catch (e) {
-                movieList = [];
-            }
-            movieList.push(movie);
-            this.searchRequest = '';
-            const listJson = JSON.stringify(movieList);
-            localStorage.setItem(LOCALSTORAGE_KEY, listJson);
+        addMovie (movie) {
+            this.$emit('addMovie', movie);
             this.results = [];
-            this.$emit('refresh');
         }
     },
     filters: {
