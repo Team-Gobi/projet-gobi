@@ -12,7 +12,7 @@
             <md-list class="custom-list md-triple-line" v-for="result in results" v-bind:src="result" v-bind:key="result">
                 <md-list-item>
                     <md-avatar>
-                        <img v-bind:src="result | toFilmPoster" alt="People">
+                        <img v-bind:src="result | toFilmPoster" alt="Image Film">
                     </md-avatar>
                     <div class="md-list-text-container">
                         <span>{{ result.title}} </span>
