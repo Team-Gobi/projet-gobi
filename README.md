@@ -18,7 +18,7 @@ En cliquant sur un titre de film on arrive sur une page où l'on trouve le résu
 
 ## Architecture de l'application
 
-
+![image](./documents/architecture-app.jpg"Architecture")
 
 
 ## Problèmes rencontrés
