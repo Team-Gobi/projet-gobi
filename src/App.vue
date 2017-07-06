@@ -4,7 +4,7 @@
   
     <!-- <img src="./assets/logo-gobi-sobre.png"> -->
     <div class="phone-viewport complete-example">
-      <md-toolbar class="md-toolbar-container">
+      <md-toolbar class="md-toolbar-container md-medium">
         <md-button class="md-icon-button">
           <a href="./">
             <md-icon class="md-size-1x md-accent">home</md-icon>
