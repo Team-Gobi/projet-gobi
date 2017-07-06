@@ -15,7 +15,7 @@
                         <img v-bind:src="result | toFilmPoster" alt="Image Film">
                     </md-avatar>
                     <div class="md-list-text-container">
-                        <span>{{ result.title}} </span>
+                        <span>{{ result.title}}</span>
                         <span>{{ result.release_date }}</span>
                         <span> {{ result.overview }}</span>
                     </div>

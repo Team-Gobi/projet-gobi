@@ -14,16 +14,17 @@
                 </md-input-container>
             </md-list-item>
         </md-list>
-
         <md-list>
             <md-list-item v-for="(movie, index) in listFiltre" v-bind:key="index">
                 <md-divider class="md-inset"></md-divider>
                 <md-avatar>
                     <img v-bind:src="movie | toFilmPoster" alt="Image">
                 </md-avatar>
-                <md-list-item>
-                    <router-link v-bind:to="{path: '/movie', query: {index: movieList.indexOf(movie)}}"><span><b>{{ movie.title }}</b></span></router-link>
-                </md-list-item>
+                <md-layout class="md-list-text-container" md-flex-offset="5">
+                    <router-link v-bind:to="{path: '/movie', query: {index: movieList.indexOf(movie)}}">
+                     <span><b>{{ movie.title }}</b></span>
+                    </router-link>
+                </md-layout>
                 <md-button v-on:click="remove(movie)" class="md-icon-button">
                     <md-icon>remove</md-icon>
                 </md-button>
