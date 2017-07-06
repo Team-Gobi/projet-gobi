@@ -14,8 +14,8 @@
         <md-list>
             <md-list-item>
                 <md-input-container>
-                    <md-icon>movie_filter</md-icon>
-                    <label>Filtre</label>
+                    <md-icon>search</md-icon>
+                    <label>Rechercher dans ma liste</label>
                     <md-input v-model="query"></md-input>
                 </md-input-container>
             </md-list-item>

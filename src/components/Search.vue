@@ -3,6 +3,7 @@
       <md-list>
         <md-list-item>
           <md-input-container>
+              <md-icon>add_to_queue</md-icon>
               <label>Rechercher un film à ajouter</label>
               <md-input v-model="searchRequest"></md-input>
           </md-input-container>
