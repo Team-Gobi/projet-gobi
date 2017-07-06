@@ -48,7 +48,6 @@ export default {
             if (this.searchRequest !== '') {
                 axios.get(`https://api.themoviedb.org/3/search/movie?api_key=44d6208f7585fb3802a31ecaec254aef&language=fr&query=${this.searchRequest}`)
                 .then((response) => {
-                    console.log(response);
                     this.results = response.data.results.map(result => result);
                 })
                 .catch(error => {
