@@ -47,7 +47,7 @@ Le fichier détaillé ainsi ques les captures d'écran se trouvent dans le dossi
 
 ### Améliorations
 
-+ Nous souhaitons dasn le futur, améliorer cette application en ajoutant des fonctionnalités.
++ Nous souhaitons dans le futur, améliorer cette application en ajoutant des fonctionnalités supplémentaires.
 
   + Choix de la langue pour les titres et les résumés des films.
   + Géolocalisation et propositions de séances au cinéma selon notre position et les films se trouvant dans la liste personnelle.
