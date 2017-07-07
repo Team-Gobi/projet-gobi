@@ -18,10 +18,14 @@ En cliquant sur un titre de film on arrive sur une page où l'on trouve le résu
 
 ## Architecture de l'application
 
+L'architecture de notre application est la suivante:
++ App.vue (Squelette de l'application)
++ Home.vue (affichage de la liste de films, fonctions de recherche de film et fonction de filtre de la liste de films personnelle)
++ Search.vue (Permet de rechercher un film grâce à l'API The Movie DB)
++ Movie.vue (détails d'un film se trouvant dans la liste)
+
+![image](documents/architecture-app.png "Architecture")
 Le fichier détaillé ainsi ques les captures d'écran se trouvent dans le dossier "documents"
-
-![image](documents/architecture-app.jpg "Architecture")
-
 
 ## Problèmes rencontrés
 
@@ -40,6 +44,13 @@ Le fichier détaillé ainsi ques les captures d'écran se trouvent dans le dossi
 + C'était vraiment intense, car nous n'avons pas eu beaucoup de temps entre l'apprentissage des différentes technologies et leur mise en pratique.
 
 + Travailler avec Github est vraiment très pratique, même si ça demande un certain apprentissage une fois les principes de base maitrisés, c'est un outil puissant pour travailler en équipe.
+
+### Améliorations
+
++ Nous souhaitons dasn le futur, améliorer cette application en ajoutant des fonctionnalités.
+
+  + Choix de la langue pour les titres et les résumés des films.
+  + Géolocalisation et propositions de séances au cinéma selon notre position et les films se trouvant dans la liste personnelle.
 
 
 
