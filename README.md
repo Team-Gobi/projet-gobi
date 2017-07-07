@@ -15,7 +15,35 @@ En cliquant sur un titre de film on arrive sur une page où l'on trouve le résu
 + webpack
 + node.js / npm
 + The Movie DB API
++ Axios
 
+## Installation
+
+``` bash
+npm install -g vue-cli
+
+#Use vue-cli to create a new project using the webpack template
+vue init webpack movielist
+code .
+
+#Install dependencies
+npm install
+
+#Start the development server
+npm run dev
+
+# build for production with minification
+npm run build
+
+# build for production and view the bundle analyzer report
+npm run build --report
+
+# Install material design for vue
+npm install vue-material --save
+
+# Install axios to use the api
+npm install axios --save
+```
 ## Architecture de l'application
 
 L'architecture de notre application est la suivante:
