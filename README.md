@@ -79,6 +79,7 @@ Le fichier détaillé ainsi ques les captures d'écran se trouvent dans le dossi
 
   + Choix de la langue pour les titres et les résumés des films.
   + Géolocalisation et propositions de séances au cinéma selon notre position et les films se trouvant dans la liste personnelle.
+  + Ceci est un petit test
 
 
 
