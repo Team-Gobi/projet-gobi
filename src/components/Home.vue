@@ -67,7 +67,7 @@ export default {
     computed: {
         listFiltre () {
             return this.movieList.filter(movie => {
-                return movie.title.toLowerCase().indexOf(this.query.toLowerCase()) === 0;
+                return movie.title.toLowerCase().indexOf(this.query.toLowerCase()) >= -1;
             });
         }
     },
